@@ -26,7 +26,9 @@ class Header1: Element {
         label_vertical_buffer : CGFloat = 0,
         label_height : CGFloat = 0
     
-    
+    /*
+     Initializer from Element
+     */
     required init(mock : UIView) {
         super.init(mock: mock)
         self.mock = mock
@@ -34,6 +36,9 @@ class Header1: Element {
         init_header()
     }
     
+    /*
+     Initializes the dimensions in this class
+     */
     func init_dims(){
         view_width = mock.frame.width
         view_height = mock.frame.width
@@ -44,6 +49,9 @@ class Header1: Element {
         label_height = CGFloat(floor(Double(header_height - (2 * label_vertical_buffer))))
     }
     
+    /*
+     Initializes the views in this class
+     */
     func init_header(){
         self.frame = CGRect(x: 0, y: 0, width: view_height, height: header_height)
         self.backgroundColor = color_base
@@ -59,26 +67,40 @@ class Header1: Element {
         mock.addSubview(self)
     }
     
+    /*
+     Returns the name of this class
+     */
     override func className() -> String {
         return "Header1"
     }
     
+    /*
+     returns the code for the parameters of this class
+     */
     override func get_Param() -> String {
         let parameters : String = "Header 1 Parameters  "
         return parameters
     }
     
+    /*
+     returns the code of the initializers of this class
+     */
     override func get_Init() -> String {
         return "Header 1 Initializers   "
     }
     
+    /*
+     returns the code of the class
+     */
     override func get_Class() -> String {
         return "Header 1 Class  "
     }
     
+    /*
+     required initializer only called upon .nib files
+     */
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
 }
